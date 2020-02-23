@@ -23,8 +23,11 @@ a {
     padding: 0;
 
     font-size: 25px;
+    font-weight: 400;
+    vertical-align: middle;
     color: #ffffff;
     text-transform: uppercase;
+    letter-spacing: -2px;
 }
 
 .logo sup {
@@ -57,12 +60,15 @@ a {
 }
 
 .header__navigation {
-    font-size: 12px;
-    text-transform: uppercase;
+    
+}
+
+.header__navigation ul {
+    margin: 0;
 }
 
 .header__navigation li {
-    margin-right: 35px;
+    margin-right: 30px;
 
 }
 
@@ -71,6 +77,10 @@ a {
 }
 
 .header__navigation .navigation__item {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
     color: #ffffff;
     text-decoration: none;
 }
@@ -101,7 +111,7 @@ a {
 .slider__button-prev {
     position: absolute;
     left: 40px;
-    top: 285px;
+    top: 280px;
     background-image: url("assets/img/prev.png");
     display: block;
     width: 16px;
@@ -111,7 +121,7 @@ a {
 .slider__button-next {
     position: absolute;
     right: 40px;
-    top: 285px;
+    top: 280px;
     background-image: url("assets/img/next.png");
     display: block;
     width: 16px;
@@ -120,23 +130,23 @@ a {
 
 .slider__button-prev:hover ,
 .slider__button-next:hover {
-    border: 1px solid yellow;
-    background-color: red;
+    background-color: hotpink;
+    box-shadow: 0 0 2px 2px darkred;
 }
 
 .slider__button-prev:active ,
 .slider__button-next:active {
-    border: 1px solid lime;
     background-color: grey;
 }
 
 .vertical-phone {
     position: relative;
     left: 112px;
-    top: 59px;
+    top: 50px;
 }
 .vertical-phone__base {
     position: absolute;
+    top: 3px;
 }
 
 .vertical-phone__screen {
@@ -146,25 +156,29 @@ a {
 }
 
 .vertical-phone__shadow {
-    position: absolute;;
+    position: absolute;
+    top: 3px;
 }
 
 .horizontal-phone {
     position: relative;
     left: 425px;
-    top: 145px;
+    top: 170px;
 }
 
 .horizontal-phone__base {
     position: absolute;
+    top: 4px;
 }
 .horizontal-phone__screen {
     position: absolute;
-    top: 12px;
+    top: 15px;
     left: 57px;
 }
 .horizontal-phone__shadow {
     position: absolute;
+    top: 4px;
+    left: 1px;
 }
 
 
@@ -180,14 +194,21 @@ a {
 }
 
 .our-services__content h2 {
+    margin: 0;
+    margin-bottom: 18px;
+    padding: 0;
     font-family: 'Lato Black', Verdana, sans-serif;
     font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -4px;
 }
 
 .our-services__content > p {
+    margin: 0;
     font-family: 'Lato Light', Verdana, sans-serif;
     font-size: 18px;
     line-height: 30px;
+    letter-spacing: -1.5px;
 }
 
 .services {
@@ -203,7 +224,7 @@ a {
     width: 300px;
     display: flex;
     /*flex-wrap: wrap;*/
-    margin: 10px 0;
+    padding: 7px 0 18px 0;
 }
 
 .card__icon {
@@ -222,11 +243,13 @@ a {
     font-family: 'Lato Black', Verdana, sans-serif;
     font-size: 18px;
     line-height: 18px;
+    letter-spacing: -2.5px;
 }
 
 .card__description {
     margin: 0;
     font-family: 'Lato Regular', Verdana, sans-serif;
     font-size: 12px;
-    line-height: 22px;
+    line-height: 20px;
+    letter-spacing: -1px;
 }
