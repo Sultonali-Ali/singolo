@@ -232,6 +232,10 @@ a {
     line-height: 30px;
 }
 
+.our-services__bg-bottom {
+    background-color: #ffffff;
+}
+
 .services {
     width: 100%;
     display: flex;
