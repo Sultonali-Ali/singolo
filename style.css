@@ -49,6 +49,10 @@ a {
     text-transform: uppercase;
 }
 
+.logo:hover {
+    cursor: pointer;
+}
+
 .logo sup {
     color: #f06c64;
 }
@@ -148,6 +152,7 @@ a {
 
 .slider__button-prev:hover ,
 .slider__button-next:hover {
+    cursor: pointer;
     background-color: hotpink;
     box-shadow: 0 0 2px 2px darkred;
 }
@@ -315,6 +320,7 @@ a {
 .tag:hover {
     background-color: orange;
     color: black;
+    cursor: pointer;
 }
 
 .tag:active {
@@ -428,6 +434,7 @@ a {
 .social-item:hover {
     background-color: #666d89;
     color: #f2f2f2;
+    cursor: pointer;
 }
 
 .social-item:active {
