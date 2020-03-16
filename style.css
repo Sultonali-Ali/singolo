@@ -90,7 +90,6 @@ a {
 }
 
 .header__navigation {
-
 }
 
 .header__navigation ul {
@@ -126,12 +125,156 @@ a {
 
 /*===== slider =======*/
 
+@keyframes inAnimationLeft {
+    from {
+        opacity: 0;
+        left: 100%;
+    }
+    
+    to {
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes outAnimationLeft {
+    from {
+        left: 0;
+    }
+    
+    to {
+        left: -100%;
+        opacity: 0;
+    }
+}
+
+@keyframes inAnimationRight {
+    from {
+        opacity: 0;
+        left: -100%;
+    }
+    
+    to {
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes outAnimationRight {
+    from {
+        left: 0;
+    }
+    
+    to {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.inAnimationLeftSide {
+    animation: inAnimationLeft 1s 1;
+}
+
+.outAnimationLeftSide {
+    animation: outAnimationLeft 1s 1;
+}
+
+.inAnimationRightSide {
+    animation: inAnimationRight 1s 1;
+}
+
+.outAnimationRightSide {
+    animation: outAnimationRight 1s 1;
+}
+
 
 .slider__content {
+    background-color: #666d89;
     position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+
+.slider-1 {
+    position: absolute;
     background-color: #f06c64;
     width: 100%;
     height: 600px;
+}
+/* slider 2 */
+
+.slider-2 {
+    position: absolute;
+    top: 0;
+    background-color: #648BF0;
+    width: 100%;
+    height: 600px;
+}
+
+/* left phone */
+.phone-left {
+    position: relative;
+    left: 252px;
+    top: 150px;
+}
+
+.vertical-phone-left-shadow {
+    position: absolute;
+}
+
+.vertical-phone-left-base {
+    position: absolute;
+}
+
+.vertical-phone-left-display {
+    position: absolute;
+    top: 42px;
+    left: 9px;
+}
+
+/* center phone */
+
+.phone-center {
+    position: relative;
+    left: 383px;
+    top: 41px;
+}
+
+.vertical-phone-center-shadow {
+    position: absolute;
+}
+
+.vertical-phone-center-base {
+    position: absolute;
+}
+
+.vertical-phone-center-display {
+    position: absolute;
+    top: 69px;
+    left: 15px;
+}
+
+/* right phone */
+
+.phone-right {
+    position: relative;
+    left: 612px;
+    top: 150px;
+}
+
+.vertical-phone-right-shadow {
+    position: absolute;
+}
+
+.vertical-phone-right-base {
+    position: absolute;
+}
+
+.vertical-phone-right-display {
+    position: absolute;
+    top: 42px;
+    left: 9px;
 }
 
 .slider__bg-bottom {
@@ -139,6 +282,7 @@ a {
 }
 
 .slider__button-prev {
+    z-index: 1;
     position: absolute;
     left: 40px;
     top: 280px;
@@ -149,6 +293,7 @@ a {
 }
 
 .slider__button-next {
+    z-index: 1;
     position: absolute;
     right: 40px;
     top: 280px;
@@ -606,3 +751,6 @@ a {
     font-family: "Lato Regular", Verdana, sans-serif;
     font-size: 12px;
 }
+
+
+
