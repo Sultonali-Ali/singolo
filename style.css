@@ -19,6 +19,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 a {
     text-decoration: none;
 }
@@ -31,7 +36,12 @@ a {
 /*====== header ======*/
 
 .header {
+    position: sticky;
+    top: 0;
+
+    z-index: 99;
 }
+
 .header__bg-bottom {
     width: 100%;
     height: 6px;
@@ -64,6 +74,7 @@ a {
 
     list-style: none;
 }
+
 
 .navigation__item--active {
     color: #f06c64 !important;
@@ -118,6 +129,7 @@ a {
 }
 
 /*===== slider =======*/
+
 
 .slider__content {
     position: relative;
