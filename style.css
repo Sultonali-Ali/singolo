@@ -518,6 +518,13 @@ a {
     padding: 10px 0;
 }
 
+.picture-outline {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 5px solid #F06C64;
+}
+
 .picture:nth-child(4n) {
     margin-right: 0;
 }

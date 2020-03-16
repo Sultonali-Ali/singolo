@@ -1,12 +1,20 @@
 
 
 window.onload = () => {
-
+    // change header menus
     changeHeaderMenuHandler();
 
+    // change slider
     changeSliderHandler();
 
+    // switch status phone screen
     switchedPhoneScreen();
+
+    // switch portfolio tags
+    switchTabsHandler();
+
+    // highlight portfolio images by click
+    highlightPortfolioImagesHandler();
 
 };
 
@@ -135,13 +143,12 @@ const changeSliderRightSide = () => {
 
 const switchedPhoneScreen = () => {
     let phoneBaseNodes = document.querySelectorAll('.phone');
-    console.log(phoneBaseNodes);
     phoneBaseNodes.forEach(element => {
         switchScreenHandler(element);
     })
 }
 
-const switchScreenHandler = (element) => [
+const switchScreenHandler = (element) => {
     element.addEventListener('click', (e) => {
         if (element.querySelector('.screen').classList.contains('phone-screen--hidden')) {
             element.querySelector('.screen').classList.remove('phone-screen--hidden');
@@ -149,4 +156,131 @@ const switchScreenHandler = (element) => [
             element.querySelector('.screen').classList.add('phone-screen--hidden');
         }
     })
-]
+}
+
+
+// switch tabs
+
+const switchTabsHandler = () => {
+    let portfolioTags = document.querySelector('.portfolio__tags');
+
+    portfolioTags.addEventListener('click', (e) => {
+        removeSelectedTags(e);
+        if(e.target.classList.contains('tag')) {
+            selectClickedTag(e.target);
+        }
+    })
+}
+
+const removeSelectedTags = (e) => {
+    let tags = document.querySelectorAll('.portfolio__tags .tag');
+    if(e.target.classList.contains('tag')) {
+        tags.forEach(tag => {
+            tag.classList.remove('tag--active');
+            tag.classList.add('tag--bordered');
+        });
+    }
+}
+
+const selectClickedTag = (clickedTag) => {
+    clickedTag.classList.remove('tag--bordered');
+    clickedTag.classList.add('tag--active');
+
+
+    if(clickedTag.innerText === 'All') {
+        sortTagsByAll();
+    }
+
+    if(clickedTag.innerText === 'Artwork') {
+        sortByArtwork();
+    }
+
+    if(clickedTag.innerText === 'Web Design') {
+        sortByWebDesign();
+    }
+
+    if(clickedTag.innerText === 'Graphic Design') {
+        sortByGraphicDesign();
+    }
+}
+
+const sortTagsByAll = () => {
+    let pictures = Array.from(document.querySelectorAll('.picture'));
+    let picturesContainer = document.querySelector('.pictures');
+    pictures = pictures.reverse();
+    picturesContainer.innerHTML = '';
+    pictures.forEach(picture => {
+        picturesContainer.append(picture);
+    })
+}
+
+const sortByArtwork = () => {
+    let pictures = Array.from(document.querySelectorAll('.picture'));
+    let picturesContainer = document.querySelector('.pictures');
+    pictures = pictures.reverse();
+    picturesContainer.innerHTML = '';
+    pictures.forEach((picture, index) => {
+        if (index % 2 === 0) {
+            picturesContainer.append(picture);
+        }
+    });
+    pictures.forEach((picture, index) => {
+        if (index % 2 === 1) {
+            picturesContainer.append(picture);
+        }
+    });
+}
+
+const sortByWebDesign = () => {
+    let pictures = Array.from(document.querySelectorAll('.picture'));
+    let picturesContainer = document.querySelector('.pictures');
+    picturesContainer.innerHTML = '';
+    pictures.forEach((picture, index) => {
+        if (index % 2 === 0) {
+            picturesContainer.append(picture);
+        }
+    });
+    pictures.forEach((picture, index) => {
+        if (index % 2 === 1) {
+            picturesContainer.append(picture);
+        }
+    });
+}
+
+const sortByGraphicDesign = () => {
+    let pictures = Array.from(document.querySelectorAll('.picture'));
+    let picturesContainer = document.querySelector('.pictures');
+    picturesContainer.innerHTML = '';
+    pictures.forEach((picture, index) => {
+        if (index % 3 === 0) {
+            picturesContainer.append(picture);
+        }
+    });
+    pictures.forEach((picture, index) => {
+        if (index % 3 === 1) {
+            picturesContainer.append(picture);
+        }
+    });
+
+    pictures.forEach((picture, index) => {
+        if (index % 3 === 2) {
+            picturesContainer.append(picture);
+        }
+    });
+}
+
+// highlight images
+
+const highlightPortfolioImagesHandler = () => {
+    let images = document.querySelectorAll('.picture img');
+
+    document.querySelector('.pictures').addEventListener('click', (e) => {
+        let clickedImage = e.target;
+        if(clickedImage.tagName === 'IMG') {
+            images.forEach(image => {
+                image.classList.remove('picture-outline');
+            });
+            clickedImage.classList.add('picture-outline');
+        }
+    });
+}
