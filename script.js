@@ -4,6 +4,10 @@ window.onload = () => {
 
     changeHeaderMenuHandler();
 
+    changeSliderHandler();
+
+    switchedPhoneScreen();
+
 };
 
 const changeHeaderMenuHandler = () => {
@@ -20,9 +24,9 @@ const changeHeaderMenuHandler = () => {
 };
 
 const removeSelectedTab = () => {
-  document.querySelectorAll('.header__navigation .navigation__item').forEach(menuTab => {
-      menuTab.classList.remove('navigation__item--active');
-  })
+    document.querySelectorAll('.header__navigation .navigation__item').forEach(menuTab => {
+        menuTab.classList.remove('navigation__item--active');
+    })
 };
 
 const selectClickedMenuTab = (clickedMenuTab) => {
@@ -49,15 +53,15 @@ const scrollToClickedSection = () => {
 
 // change slider
 const slider1 = `<div class="slider-1">
-<div class="vertical-phone">
+<div class="vertical-phone phone">
     <img src="assets/img/shadow-vertical-phone.png" alt="vertical-phone-shadow" class="vertical-phone__shadow">
     <img src="assets/img/base-vertical-phone.png" alt="vertical-phone-base" class="vertical-phone__base">
-    <img src="assets/img/screen-vertical-phone.png" alt="vertical-phone-screen" class="vertical-phone__screen">
+    <img src="assets/img/screen-vertical-phone.png" alt="vertical-phone-screen" class="vertical-phone__screen screen">
 </div>
-<div class="horizontal-phone">
+<div class="horizontal-phone phone">
     <img src="assets/img/shadow-horizontal-phone.png" alt="horizontal-phone-shadow" class="horizontal-phone__shadow">
     <img src="assets/img/base-horizontal-phone.png" alt="horizontal-phone-base" class="horizontal-phone__base">
-    <img src="assets/img/screen-horizontal-phone.png" alt="horizontal-phone-screen" class="horizontal-phone__screen">
+    <img src="assets/img/screen-horizontal-phone.png" alt="horizontal-phone-screen" class="horizontal-phone__screen screen">
 </div>
 </div>`;
 
@@ -79,44 +83,70 @@ const slider2 = `<div class="slider-2">
 </div>
 </div>`;
 
+const changeSliderHandler = () => {
+
+    document.querySelector('.slider__button-prev').addEventListener('click', () => {
+        changeSliderLeftSide();
+    });
+
+    document.querySelector('.slider__button-next').addEventListener('click', () => {
+        changeSliderRightSide();
+    });
+}
+
 const changeSliderLeftSide = () => {
-    if(document.querySelector('.slider-1')) {
+    if (document.querySelector('.slider-1')) {
         document.querySelector('.slider-1').classList.add('outAnimationLeftSide');
         setTimeout(() => {
             document.querySelector('.slider__content .sliders').innerHTML = slider2;
-        document.querySelector('.slider-2').classList.add('inAnimationLeftSide');
+            document.querySelector('.slider-2').classList.add('inAnimationLeftSide');
         }, 500);
-        
+
     } else {
         document.querySelector('.slider-2').classList.add('outAnimationLeftSide');
         setTimeout(() => {
             document.querySelector('.slider__content .sliders').innerHTML = slider1;
-        document.querySelector('.slider-1').classList.add('inAnimationLeftSide');
+            switchedPhoneScreen();
+            document.querySelector('.slider-1').classList.add('inAnimationLeftSide');
         }, 500);
     }
 }
 
 const changeSliderRightSide = () => {
-    if(document.querySelector('.slider-1')) {
+    if (document.querySelector('.slider-1')) {
         document.querySelector('.slider-1').classList.add('outAnimationRightSide');
         setTimeout(() => {
             document.querySelector('.slider__content .sliders').innerHTML = slider2;
-        document.querySelector('.slider-2').classList.add('inAnimationRightSide');
+            document.querySelector('.slider-2').classList.add('inAnimationRightSide');
         }, 500);
-        
+
     } else {
         document.querySelector('.slider-2').classList.add('outAnimationRightSide');
         setTimeout(() => {
             document.querySelector('.slider__content .sliders').innerHTML = slider1;
-        document.querySelector('.slider-1').classList.add('inAnimationRightSide');
+            switchedPhoneScreen();
+            document.querySelector('.slider-1').classList.add('inAnimationRightSide');
         }, 500);
     }
 }
 
-document.querySelector('.slider__button-prev').addEventListener('click', () => {
-    changeSliderLeftSide();
-});
 
-document.querySelector('.slider__button-next').addEventListener('click', () => {
-    changeSliderRightSide();
-})
+// switch screen
+
+const switchedPhoneScreen = () => {
+    let phoneBaseNodes = document.querySelectorAll('.phone');
+    console.log(phoneBaseNodes);
+    phoneBaseNodes.forEach(element => {
+        switchScreenHandler(element);
+    })
+}
+
+const switchScreenHandler = (element) => [
+    element.addEventListener('click', (e) => {
+        if (element.querySelector('.screen').classList.contains('phone-screen--hidden')) {
+            element.querySelector('.screen').classList.remove('phone-screen--hidden');
+        } else {
+            element.querySelector('.screen').classList.add('phone-screen--hidden');
+        }
+    })
+]
