@@ -332,15 +332,16 @@ const generateModalWindow = (data) => {
 
     modal.innerHTML = content;
     modal.append(closeButton);
-    modal.addEventListener('click', (e) => {
-        if(e.target.tagName === 'BUTTON') {
-            modal.remove();
-        }
-    });
+    
 
     let overlay = document.createElement('div');
     overlay.classList.add('overlay');
     overlay.append(modal);
+    overlay.addEventListener('click', (e) => {
+        if(e.target.tagName === 'BUTTON') {
+            overlay.remove();
+        }
+    });
     return overlay;
 
 }
