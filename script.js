@@ -16,6 +16,9 @@ window.onload = () => {
     // highlight portfolio images by click
     highlightPortfolioImagesHandler();
 
+    // show message on modal
+    sendMessageHandler();
+
 };
 
 const changeHeaderMenuHandler = () => {
@@ -283,4 +286,61 @@ const highlightPortfolioImagesHandler = () => {
             clickedImage.classList.add('picture-outline');
         }
     });
+}
+
+// get a quote
+
+const sendMessageHandler = () => {
+    let btn = document.querySelector('#submit-btn');
+    
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let formData = {};
+        formData.name = document.querySelector('#name').value;
+        formData.email = document.querySelector('#email').value;
+        formData.subject = document.querySelector('#subject').value;
+        formData.details = document.querySelector('#details').value;
+
+        document.body.append(generateModalWindow(formData));
+    })
+
+    
+}
+
+const generateModalWindow = (data) => {
+    let modal = document.createElement('div');
+    let closeButton = document.createElement('button');
+    let content = '';
+
+    modal.classList.add('modal');
+    modal.innerHTML = '';
+    content += '<h4>Письмо отправлено</h4>';
+    if (data.subject.trim()) {
+        content += `<p>Тема: ${data.subject}</p>`;
+    } else {
+        content += `<p>Тема: Без темы</p>`;
+    }
+
+    if (data.details.trim()) {
+        content += `<p>Описание: ${data.details}</p>`;
+    } else {
+        content += `<p>Описание: Без описания</p>`;
+    }
+
+    closeButton.innerText = 'OK';
+    
+
+    modal.innerHTML = content;
+    modal.append(closeButton);
+    modal.addEventListener('click', (e) => {
+        if(e.target.tagName === 'BUTTON') {
+            modal.remove();
+        }
+    });
+
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    overlay.append(modal);
+    return overlay;
+
 }
