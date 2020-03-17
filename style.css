@@ -171,19 +171,19 @@ a {
 }
 
 .inAnimationLeftSide {
-    animation: inAnimationLeft 1s 1;
+    animation: inAnimationLeft 0.5s 1;
 }
 
 .outAnimationLeftSide {
-    animation: outAnimationLeft 1s 1;
+    animation: outAnimationLeft 0.5s 1;
 }
 
 .inAnimationRightSide {
-    animation: inAnimationRight 1s 1;
+    animation: inAnimationRight 0.5s 1;
 }
 
 .outAnimationRightSide {
-    animation: outAnimationRight 1s 1;
+    animation: outAnimationRight 0.5s 1;
 }
 
 

@@ -64,14 +64,14 @@ const scrollToClickedSection = () => {
 
 // change slider
 const slider1 = `<div class="slider-1">
-<div class="vertical-phone phone">
+<div class="vertical-phone">
     <img src="assets/img/shadow-vertical-phone.png" alt="vertical-phone-shadow" class="vertical-phone__shadow">
-    <img src="assets/img/base-vertical-phone.png" alt="vertical-phone-base" class="vertical-phone__base">
+    <img src="assets/img/base-vertical-phone.png" alt="vertical-phone-base" class="vertical-phone__base phone">
     <img src="assets/img/screen-vertical-phone.png" alt="vertical-phone-screen" class="vertical-phone__screen screen">
 </div>
-<div class="horizontal-phone phone">
+<div class="horizontal-phone">
     <img src="assets/img/shadow-horizontal-phone.png" alt="horizontal-phone-shadow" class="horizontal-phone__shadow">
-    <img src="assets/img/base-horizontal-phone.png" alt="horizontal-phone-base" class="horizontal-phone__base">
+    <img src="assets/img/base-horizontal-phone.png" alt="horizontal-phone-base" class="horizontal-phone__base phone">
     <img src="assets/img/screen-horizontal-phone.png" alt="horizontal-phone-screen" class="horizontal-phone__screen screen">
 </div>
 </div>`;
@@ -79,18 +79,18 @@ const slider1 = `<div class="slider-1">
 const slider2 = `<div class="slider-2">
 <div class="phone-left">
     <img src="assets/img/phone-vertical-right-shadow.png" alt="vertical left phone" class="vertical-phone-left-shadow">
-    <img src="assets/img/phone-vertical_right_base.png" alt="vertical left phone" class="vertical-phone-left-base">
-    <img src="assets/img/phone-vertical-right-display.png" alt="vertical left phone" class="vertical-phone-left-display">
+    <img src="assets/img/phone-vertical_right_base.png" alt="vertical left phone" class="vertical-phone-left-base phone">
+    <img src="assets/img/phone-vertical-right-display.png" alt="vertical left phone" class="vertical-phone-left-display screen">
 </div>
 <div class="phone-center">
     <img src="assets/img/phone-vertical-center-shadow.png" alt="vertical center phone" class="vertical-phone-center-shadow">
-    <img src="assets/img/phone-vertical-center-base.png" alt="vertical center phone" class="vertical-phone-center-base">
-    <img src="assets/img/phone-vertical-center-display.png" alt="vertical center phone" class="vertical-phone-center-display">
+    <img src="assets/img/phone-vertical-center-base.png" alt="vertical center phone" class="vertical-phone-center-base phone">
+    <img src="assets/img/phone-vertical-center-display.png" alt="vertical center phone" class="vertical-phone-center-display screen">
 </div>
 <div class="phone-right">
     <img src="assets/img/phone-vertical-right-shadow.png" alt="vertical right phone" class="vertical-phone-right-shadow">
-    <img src="assets/img/phone-vertical_right_base.png" alt="vertical right phone" class="vertical-phone-right-base">
-    <img src="assets/img/phone-vertical-right-display.png" alt="vertical right phone" class="vertical-phone-right-display">
+    <img src="assets/img/phone-vertical_right_base.png" alt="vertical right phone" class="vertical-phone-right-base phone">
+    <img src="assets/img/phone-vertical-right-display.png" alt="vertical right phone" class="vertical-phone-right-display screen">
 </div>
 </div>`;
 
@@ -110,8 +110,9 @@ const changeSliderLeftSide = () => {
         document.querySelector('.slider-1').classList.add('outAnimationLeftSide');
         setTimeout(() => {
             document.querySelector('.slider__content .sliders').innerHTML = slider2;
+            switchedPhoneScreen();
             document.querySelector('.slider-2').classList.add('inAnimationLeftSide');
-        }, 500);
+        }, 250);
 
     } else {
         document.querySelector('.slider-2').classList.add('outAnimationLeftSide');
@@ -119,7 +120,7 @@ const changeSliderLeftSide = () => {
             document.querySelector('.slider__content .sliders').innerHTML = slider1;
             switchedPhoneScreen();
             document.querySelector('.slider-1').classList.add('inAnimationLeftSide');
-        }, 500);
+        }, 250);
     }
 }
 
@@ -128,8 +129,9 @@ const changeSliderRightSide = () => {
         document.querySelector('.slider-1').classList.add('outAnimationRightSide');
         setTimeout(() => {
             document.querySelector('.slider__content .sliders').innerHTML = slider2;
+            switchedPhoneScreen();
             document.querySelector('.slider-2').classList.add('inAnimationRightSide');
-        }, 500);
+        }, 250);
 
     } else {
         document.querySelector('.slider-2').classList.add('outAnimationRightSide');
@@ -137,7 +139,7 @@ const changeSliderRightSide = () => {
             document.querySelector('.slider__content .sliders').innerHTML = slider1;
             switchedPhoneScreen();
             document.querySelector('.slider-1').classList.add('inAnimationRightSide');
-        }, 500);
+        }, 250);
     }
 }
 
@@ -153,10 +155,10 @@ const switchedPhoneScreen = () => {
 
 const switchScreenHandler = (element) => {
     element.addEventListener('click', (e) => {
-        if (element.querySelector('.screen').classList.contains('phone-screen--hidden')) {
-            element.querySelector('.screen').classList.remove('phone-screen--hidden');
+        if (element.parentElement.querySelector('.screen').classList.contains('phone-screen--hidden')) {
+            element.parentElement.querySelector('.screen').classList.remove('phone-screen--hidden');
         } else {
-            element.querySelector('.screen').classList.add('phone-screen--hidden');
+            element.parentElement.querySelector('.screen').classList.add('phone-screen--hidden');
         }
     })
 }
