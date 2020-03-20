@@ -19,9 +19,22 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
 
 a {
     text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 96px;
 }
 
 .wrapper {
