@@ -283,11 +283,15 @@ const highlightPortfolioImagesHandler = () => {
 
     document.querySelector('.pictures').addEventListener('click', (e) => {
         let clickedImage = e.target;
-        if (clickedImage.tagName === 'IMG') {
-            images.forEach(image => {
-                image.classList.remove('picture-outline');
-            });
-            clickedImage.classList.add('picture-outline');
+        if(clickedImage.classList.contains('picture-outline')) {
+            clickedImage.classList.remove('picture-outline')
+        } else {
+            if (clickedImage.tagName === 'IMG') {
+                images.forEach(image => {
+                    image.classList.remove('picture-outline');
+                });
+                clickedImage.classList.add('picture-outline');
+            }
         }
     });
 }

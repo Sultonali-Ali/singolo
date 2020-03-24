@@ -1,18 +1,25 @@
 @font-face {
     font-family: "Lato Black";
-    src: url(assets/fonts/Lato/Lato-Black.ttf) format("truetype"); /* все современные браузеры */
+    src        : url(assets/fonts/Lato/Lato-Black.ttf) format("truetype");
+    /* все современные браузеры */
 }
+
 @font-face {
     font-family: "Lato Bold";
-    src: url(assets/fonts/Lato/Lato-Bold.ttf) format("truetype"); /* все современные браузеры */
+    src        : url(assets/fonts/Lato/Lato-Bold.ttf) format("truetype");
+    /* все современные браузеры */
 }
+
 @font-face {
     font-family: "Lato Regular";
-    src: url(assets/fonts/Lato/Lato-Regular.ttf) format("truetype"); /* все современные браузеры */
+    src        : url(assets/fonts/Lato/Lato-Regular.ttf) format("truetype");
+    /* все современные браузеры */
 }
+
 @font-face {
     font-family: "Lato Light";
-    src: url(assets/fonts/Lato/Lato-Light.ttf) format("truetype"); /* все современные браузеры */
+    src        : url(assets/fonts/Lato/Lato-Light.ttf) format("truetype");
+    /* все современные браузеры */
 }
 
 * {
@@ -38,7 +45,7 @@ section {
 }
 
 .wrapper {
-    width: 1020px;
+    width : 1020px;
     margin: 0 auto;
 }
 
@@ -46,25 +53,25 @@ section {
 
 .header {
     position: sticky;
-    top: 0;
+    top     : 0;
 
     z-index: 99;
 }
 
 .header__bg-bottom {
-    width: 100%;
-    height: 6px;
+    width           : 100%;
+    height          : 6px;
     background-color: #323746;
 }
 
 .logo {
-    margin: 0;
+    margin : 0;
     padding: 0;
 
-    font-size: 25px;
-    font-weight: 400;
+    font-size     : 25px;
+    font-weight   : 400;
     vertical-align: middle;
-    color: #ffffff;
+    color         : #ffffff;
     text-transform: uppercase;
 }
 
@@ -77,7 +84,7 @@ section {
 }
 
 .navigation {
-    display: flex;
+    display  : flex;
     flex-wrap: wrap;
 
 
@@ -90,11 +97,11 @@ section {
 }
 
 .header__content {
-    padding: 0 40px;
-    height: 90px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    padding        : 0 40px;
+    height         : 90px;
+    display        : flex;
+    flex-wrap      : wrap;
+    align-items    : center;
     justify-content: space-between;
 
     background-color: #2d303a;
@@ -118,21 +125,21 @@ section {
 }
 
 .header__navigation .navigation__item {
-    font-size: 12px;
-    line-height: 14px;
-    text-transform: uppercase;
-    color: #ffffff;
+    font-size      : 12px;
+    line-height    : 14px;
+    text-transform : uppercase;
+    color          : #ffffff;
     text-decoration: none;
 }
 
 .header__navigation .navigation__item:hover {
-    cursor: pointer;
-    color: #f06c64;
+    cursor         : pointer;
+    color          : #f06c64;
     text-decoration: underline;
 }
 
 .header__navigation .navigation__item:active {
-    color: rgba(240,108,100,.5);
+    color: rgba(240, 108, 100, .5);
 }
 
 /*===== slider =======*/
@@ -140,11 +147,11 @@ section {
 @keyframes inAnimationLeft {
     from {
         opacity: 0;
-        left: 100%;
+        left   : 100%;
     }
-    
+
     to {
-        left: 0%;
+        left   : 0%;
         opacity: 1;
     }
 }
@@ -153,9 +160,9 @@ section {
     from {
         left: 0;
     }
-    
+
     to {
-        left: -100%;
+        left   : -100%;
         opacity: 0;
     }
 }
@@ -163,11 +170,11 @@ section {
 @keyframes inAnimationRight {
     from {
         opacity: 0;
-        left: -100%;
+        left   : -100%;
     }
-    
+
     to {
-        left: 0%;
+        left   : 0%;
         opacity: 1;
     }
 }
@@ -176,9 +183,9 @@ section {
     from {
         left: 0;
     }
-    
+
     to {
-        left: 100%;
+        left   : 100%;
         opacity: 0;
     }
 }
@@ -202,33 +209,89 @@ section {
 
 .slider__content {
     background-color: #666d89;
-    position: relative;
-    width: 100%;
-    height: 600px;
+    position        : relative;
+    width           : 100%;
+    height          : 600px;
 }
 
+/* slider-1 */
 
 .slider-1 {
-    position: absolute;
+    display         : inline-block;
+    position        : relative;
     background-color: #f06c64;
-    width: 100%;
-    height: 600px;
+    width           : 100%;
+    height          : 600px;
 }
+
+.vertical-phone {
+    position: absolute;
+    left    : 11%;
+    top     : 9%;
+    width   : 23.5%;
+    height  : 80.5%;
+}
+
+.vertical-phone__base {
+    position: absolute;
+    top     : 3px;
+}
+
+.vertical-phone__screen {
+    position: absolute;
+    top     : 62px;
+    left    : 12px;
+}
+
+.phone-screen--hidden {
+    display: none;
+}
+
+.vertical-phone__shadow {
+    position: absolute;
+    top     : 3px;
+}
+
+.horizontal-phone {
+    position: absolute;
+    width   : 40.25%;
+    height  : 40%;
+    left    : 41.67%;
+    top     : 29.5%;
+}
+
+.horizontal-phone__base {
+    position: absolute;
+    top     : 4px;
+}
+
+.horizontal-phone__screen {
+    position: absolute;
+    top     : 15px;
+    left    : 57px;
+}
+
+.horizontal-phone__shadow {
+    position: absolute;
+    top     : 4px;
+    left    : 1px;
+}
+
 /* slider 2 */
 
 .slider-2 {
-    position: absolute;
-    top: 0;
+    position        : absolute;
+    top             : 0;
     background-color: #648BF0;
-    width: 100%;
-    height: 600px;
+    width           : 100%;
+    height          : 600px;
 }
 
 /* left phone */
 .phone-left {
     position: relative;
-    left: 252px;
-    top: 150px;
+    left    : 252px;
+    top     : 150px;
 }
 
 .vertical-phone-left-shadow {
@@ -241,16 +304,16 @@ section {
 
 .vertical-phone-left-display {
     position: absolute;
-    top: 42px;
-    left: 9px;
+    top     : 42px;
+    left    : 9px;
 }
 
 /* center phone */
 
 .phone-center {
     position: relative;
-    left: 383px;
-    top: 41px;
+    left    : 383px;
+    top     : 41px;
 }
 
 .vertical-phone-center-shadow {
@@ -263,16 +326,16 @@ section {
 
 .vertical-phone-center-display {
     position: absolute;
-    top: 69px;
-    left: 15px;
+    top     : 69px;
+    left    : 15px;
 }
 
 /* right phone */
 
 .phone-right {
     position: relative;
-    left: 612px;
-    top: 150px;
+    left    : 612px;
+    top     : 150px;
 }
 
 .vertical-phone-right-shadow {
@@ -285,8 +348,8 @@ section {
 
 .vertical-phone-right-display {
     position: absolute;
-    top: 42px;
-    left: 9px;
+    top     : 42px;
+    left    : 9px;
 }
 
 .slider__bg-bottom {
@@ -294,91 +357,46 @@ section {
 }
 
 .slider__button-prev {
-    z-index: 1;
-    position: absolute;
-    left: 40px;
-    top: 280px;
+    z-index         : 1;
+    position        : absolute;
+    left            : 40px;
+    top             : 280px;
     background-image: url("assets/img/prev.png");
-    display: block;
-    width: 16px;
-    height: 27px;
+    display         : block;
+    width           : 16px;
+    height          : 27px;
 }
 
 .slider__button-next {
-    z-index: 1;
-    position: absolute;
-    right: 40px;
-    top: 280px;
+    z-index         : 1;
+    position        : absolute;
+    right           : 40px;
+    top             : 280px;
     background-image: url("assets/img/next.png");
-    display: block;
-    width: 16px;
-    height: 27px;
+    display         : block;
+    width           : 16px;
+    height          : 27px;
 }
 
-.slider__button-prev:hover ,
+.slider__button-prev:hover,
 .slider__button-next:hover {
-    cursor: pointer;
+    cursor          : pointer;
     background-color: hotpink;
-    box-shadow: 0 0 2px 2px darkred;
+    box-shadow      : 0 0 2px 2px darkred;
 }
 
-.slider__button-prev:active ,
+.slider__button-prev:active,
 .slider__button-next:active {
     background-color: grey;
 }
 
-.vertical-phone {
-    position: relative;
-    left: 112px;
-    top: 50px;
-}
-.vertical-phone__base {
-    position: absolute;
-    top: 3px;
-}
-
-.vertical-phone__screen {
-    position: absolute;
-    top: 62px;
-    left: 12px;
-}
-
-.phone-screen--hidden {
-    display: none;
-}
-
-.vertical-phone__shadow {
-    position: absolute;
-    top: 3px;
-}
-
-.horizontal-phone {
-    position: relative;
-    left: 425px;
-    top: 170px;
-}
-
-.horizontal-phone__base {
-    position: absolute;
-    top: 4px;
-}
-.horizontal-phone__screen {
-    position: absolute;
-    top: 15px;
-    left: 57px;
-}
-.horizontal-phone__shadow {
-    position: absolute;
-    top: 4px;
-    left: 1px;
-}
 
 
 /*===== our services =====*/
 
 .our-services__content {
     background-color: #f2f2f2;
-    padding: 60px 40px 50px;
+    padding         : 60px 40px 50px;
 }
 
 .our-services__content {
@@ -386,18 +404,18 @@ section {
 }
 
 .our-services__content h2 {
-    margin: 0;
+    margin       : 0;
     margin-bottom: 18px;
-    padding: 0;
-    font-family: 'Lato Black', Verdana, sans-serif;
-    font-size: 30px;
-    font-weight: 600;
+    padding      : 0;
+    font-family  : 'Lato Black', Verdana, sans-serif;
+    font-size    : 30px;
+    font-weight  : 600;
 }
 
-.our-services__content > p {
-    margin: 0;
+.our-services__content>p {
+    margin     : 0;
     font-family: 'Lato Light', Verdana, sans-serif;
-    font-size: 18px;
+    font-size  : 18px;
     line-height: 30px;
 }
 
@@ -406,55 +424,56 @@ section {
 }
 
 .services {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    width          : 100%;
+    display        : flex;
+    flex-wrap      : wrap;
     justify-content: space-between;
-    margin: 40px 0 0 0;
+    margin         : 40px 0 0 0;
 
 }
 
 .card {
-    width: 300px;
+    width  : 300px;
     display: flex;
     padding: 7px 0 18px 0;
 }
 
 .card__icon {
-    width: 60px;
-    height: auto;
-    display: flex;
+    width      : 60px;
+    height     : auto;
+    display    : flex;
     align-items: flex-start;
 }
+
 .card__content {
-    width: 220px;
+    width      : 220px;
     margin-left: 20px;
 }
 
 .card__title {
-    margin: 0 0 15px 0;
+    margin     : 0 0 15px 0;
     font-family: 'Lato Black', Verdana, sans-serif;
-    font-size: 18px;
+    font-size  : 18px;
     line-height: 18px;
 }
 
 .card__description {
-    margin: 0;
+    margin     : 0;
     font-family: 'Lato Regular', Verdana, sans-serif;
-    font-size: 12px;
+    font-size  : 12px;
     line-height: 20px;
 }
 
 
 
 .bg-bottom {
-    height: 6px;
+    height   : 6px;
     max-width: 1020px;
-    margin: 0 auto;
+    margin   : 0 auto;
 }
 
 .portfolio__wrapper {
-    padding: 60px 40px 55px;
+    padding         : 60px 40px 55px;
     background-color: #2d303a;
 
     color: #666d89;
@@ -465,13 +484,14 @@ section {
 }
 
 .portfolio__title {
-    margin: 0 0 21px 0;
+    margin     : 0 0 21px 0;
     font-family: "Lato Black", Verdana, sans-serif;
-    font-size: 30px;
+    font-size  : 30px;
 }
+
 .portfolio__description {
     font-family: "Lato Light", Verdana, sans-serif;
-    font-size: 18px;
+    font-size  : 18px;
     line-height: 18px;
 }
 
@@ -481,10 +501,10 @@ section {
 
 .tag {
     margin-right: 4px;
-    padding: 2px 7px 3px;
+    padding     : 2px 7px 3px;
 
     font-family: "Lato Regular", Verdana, sans-serif;
-    font-size: 12px;
+    font-size  : 12px;
     line-height: 22px;
 
     border-radius: 5px;
@@ -492,13 +512,13 @@ section {
 
 .tag:hover {
     background-color: orange;
-    color: black;
-    cursor: pointer;
+    color           : black;
+    cursor          : pointer;
 }
 
 .tag:active {
-    opacity: .5;
-    box-shadow: 0 0 4px 4px rgba(0,255,0, .2);
+    opacity   : .5;
+    box-shadow: 0 0 4px 4px rgba(0, 255, 0, .2);
 }
 
 .tag:last-child {
@@ -518,24 +538,24 @@ section {
 }
 
 .pictures {
-    display: flex;
+    display  : flex;
     flex-wrap: wrap;
 
     height: 624px;
 }
 
 .picture {
-    width: 220px;
-    height: 182px;
+    width       : 220px;
+    height      : 182px;
     margin-right: 20px;
-    padding: 10px 0;
+    padding     : 10px 0;
 }
 
 .picture-outline {
-    margin: 0;
-    padding: 0;
+    margin    : 0;
+    padding   : 0;
     box-sizing: border-box;
-    border: 5px solid #F06C64;
+    border    : 5px solid #F06C64;
 }
 
 .picture:nth-child(4n) {
@@ -546,80 +566,80 @@ section {
 
 .about-us__wrapper {
     background-color: #f2f2f2;
-    padding: 60px 40px;
+    padding         : 60px 40px;
 }
 
 .about-us__title {
-    margin: 0;
+    margin     : 0;
     font-family: "Lato Black", Verdana, sans-serif;
-    font-size: 30px;
-    color: #666d89;
+    font-size  : 30px;
+    color      : #666d89;
 }
 
 .about-us__description {
     font-family: "Lato Light", Verdana, sans-serif;
-    font-size: 18px;
+    font-size  : 18px;
     line-height: 30px;
-    color: #767e9e;
+    color      : #767e9e;
 }
 
 .employees {
-    display: flex;
-    flex-wrap: wrap;
+    display        : flex;
+    flex-wrap      : wrap;
     justify-content: space-between;
 
     padding-top: 24px;
 }
 
 .employee {
-    width: 300px;
+    width      : 300px;
     padding-top: 5px;
 }
 
 .employee__name {
-    margin: 8px 0 0 0;
+    margin     : 8px 0 0 0;
     font-family: "Lato Black", Verdana, sans-serif;
-    font-size: 18px;
+    font-size  : 18px;
     line-height: 28px;
-    color: #666d89;
+    color      : #666d89;
     white-space: unset;
 }
 
 .employee__text {
-    margin: 4px 0 23px 0;
+    margin     : 4px 0 23px 0;
     font-family: "Lato Regular", Verdana, sans-serif;
-    font-size: 12px;
+    font-size  : 12px;
     line-height: 22px;
-    color: #767e9e;
+    color      : #767e9e;
 }
 
 .social {
-    display: flex;
+    display  : flex;
     flex-wrap: wrap;
 }
 
 .social-item {
-    width: 32px;
+    width : 32px;
     height: 32px;
     margin: 2px 8px 0 0;
 
-    line-height: 32px;
+    line-height   : 32px;
     vertical-align: middle;
-    text-align: center;
+    text-align    : center;
 
     border-radius: 50%;
-    border: 1px solid #6a718c;
+    border       : 1px solid #6a718c;
 }
 
 .social-item:hover {
     background-color: #666d89;
-    color: #f2f2f2;
-    cursor: pointer;
+    color           : #f2f2f2;
+    cursor          : pointer;
 }
 
 .social-item:active {
-    opacity: .5;
-    box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
+    opacity   : .5;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
 }
 
 .social-item:last-child {
@@ -633,27 +653,27 @@ section {
 
 
 .contacts__wrapper {
-    padding: 60px 40px;
+    padding         : 60px 40px;
     background-color: #f06c64;
 }
 
 .contacts__title {
-    margin: 0;
+    margin : 0;
     padding: 0 0 17px 0;
 
     font-family: "Lato Black", Verdana, sans-serif;
-    font-size: 30px;
-    color: #f0d8d9;
+    font-size  : 30px;
+    color      : #f0d8d9;
 }
 
 .contacts__text {
-    margin: 0;
+    margin : 0;
     padding: 0 0 43px 0;
 
     font-family: "Lato Light", Verdana, sans-serif;
-    font-size: 18px;
+    font-size  : 18px;
     line-height: 30px;
-    color: #f0d8d9;
+    color      : #f0d8d9;
 }
 
 .contacts__content {
@@ -661,35 +681,35 @@ section {
 }
 
 .contacts__form {
-    width: 620px;
+    width       : 620px;
     margin-right: 20px;
 }
 
 .contacts__form input {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 15px;
-    padding: 0 0 0 15px;
+    width           : 100%;
+    height          : 40px;
+    margin-bottom   : 15px;
+    padding         : 0 0 0 15px;
     background-color: #d6564f;
 
     font-family: "Lato Regular", Verdana, sans-serif;
-    font-size: 12px;
+    font-size  : 12px;
     line-height: 22px;
-    color: #f0d8d9;
+    color      : #f0d8d9;
 
-    border: none;
+    border       : none;
     border-radius: 5px;
 }
 
 .contacts__form textarea {
-    width: 100%;
-    height: 200px;
-    padding: 15px 0 0 15px;
+    width           : 100%;
+    height          : 200px;
+    padding         : 15px 0 0 15px;
     background-color: #d6564f;
 
     color: #f0d8d9;
 
-    border: none;
+    border       : none;
     border-radius: 5px;
 }
 
@@ -697,14 +717,14 @@ section {
     padding: 5px 10px;
 
     font-family: "Lato Black", Verdana, sans-serif;
-    font-size: 16px;
+    font-size  : 16px;
 
     border-radius: 5px;
 }
 
 .contacts__form button:hover {
     background-color: #f0d8d9;
-    cursor: pointer;
+    cursor          : pointer;
 }
 
 .contacts__form button:active {
@@ -718,7 +738,7 @@ section {
 
 .information {
     font-family: "Lato Regular", Verdana, sans-serif;
-    font-size: 12px;
+    font-size  : 12px;
     line-height: 21px;
 }
 
@@ -726,19 +746,19 @@ section {
     margin: 0 0 10px 0;
 
     font-family: "Lato Black", Verdana, sans-serif;
-    font-size: 18px;
+    font-size  : 18px;
 }
 
 
 .contact-list {
-    margin: 0;
-    padding: 10px 0 0 2px;
+    margin    : 0;
+    padding   : 10px 0 0 2px;
     list-style: none;
 }
 
 .contact-list a {
     text-decoration: none;
-    color: #f0d8d9;
+    color          : #f0d8d9;
 }
 
 .contact-list img {
@@ -754,13 +774,13 @@ section {
 }
 
 .footer__wrapper {
-    max-width: 1020px;
-    height: 76px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width       : 1020px;
+    height          : 76px;
+    margin          : 0 auto;
+    padding         : 0 40px;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
     background-color: #2d303a;
 
     color: #666d89;
@@ -768,48 +788,45 @@ section {
 
 .copyright {
     font-family: "Lato Regular", Verdana, sans-serif;
-    font-size: 12px;
+    font-size  : 12px;
 }
 
 
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
 }
 
 .modal {
-    position: relative;
-    border-radius: 10px;
+    position        : relative;
+    border-radius   : 10px;
     background-color: #f2f2f2;
-    width: 675px;
-    min-height: 120px;
-    max-height: 90%;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px 30px;
-  }
-  
-  .modal__close-icon {
+    width           : 675px;
+    min-height      : 120px;
+    max-height      : 90%;
+    overflow        : auto;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-wrap       : wrap;
+    padding         : 20px 30px;
+}
+
+.modal__close-icon {
     position: absolute;
-    top: 30px;
-    right: 26px;
-    cursor: pointer;
-  }
+    top     : 30px;
+    right   : 26px;
+    cursor  : pointer;
+}
 
-  .modal p,
-  .modal h4 {
-      width: 100%;
-  }
-
-
-
+.modal p,
+.modal h4 {
+    width: 100%;
+}
