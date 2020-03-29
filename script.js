@@ -362,19 +362,26 @@ const generateModalWindow = (data) => {
 const showMobileMuneHandler = () => {
     const burger = document.querySelector('.header-burger');
     const menu = document.querySelector('.header-for-mobile__content');
+    const overlay = document.querySelector('.header-for-mobile__overlay');
     let isOpen = false;
 
     burger.addEventListener('click', () => {
         if (!isOpen) {
             isOpen = true;
+
+            overlay.style.display = 'block';
+            menu.style.display = 'block';
+
             burger.style.transition = 'transform 0.5s linear';
             menu.style.transition = 'left 0.5s linear';
             burger.style.transform = 'rotate(-90deg)';
             menu.style.left = '0%';
+
         } else {
             isOpen = false;
             burger.style.transform = 'rotate(0)';
             menu.style.left = '-74%';
+            overlay.style.display = 'none';
         }
 
     })
