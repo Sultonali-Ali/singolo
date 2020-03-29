@@ -9,12 +9,34 @@
 </head>
 <body>
 <header class="header" id="header">
+    <div class="header-for-mobile">
+        <div class="header-for-mobile__overlay"></div>
+        <div class="header-burger">
+            <span class="header-burger__top"></span>
+            <span class="header-burger__center"></span>
+            <span class="header-burger__bottom"></span>
+        </div> 
+        <div class="header-for-mobile__content">
+            <div class="header-for-mobile__top">
+                
+                <a><h1 class="logo">Singolo<span>*</span></h1></a>
+            </div>
+            <ul class="navigation">
+                <li><a href="#slider" class="navigation__item navigation__item--active">Home</a></li>
+                <li><a href="#services" class="navigation__item">Services</a></li>
+                <li><a href="#portfolio" class="navigation__item">Portfolio</a></li>
+                <li><a href="#about" class="navigation__item">About</a></li>
+                <li><a href="#contact" class="navigation__item">Contact</a></li>
+            </ul>
+        </div>
+        
+    </div>
     <div class="wrapper header__wrapper">
-        <div class="header__content">
+        <div class="header__content">            
             <a><h1 class="logo">Singolo<sup>*</sup></h1></a>
             <nav class="header__navigation">
                 <ul class="navigation">
-                    <li><a href="#" class="navigation__item navigation__item--active">Home</a></li>
+                    <li><a href="#slider" class="navigation__item navigation__item--active">Home</a></li>
                     <li><a href="#services" class="navigation__item">Services</a></li>
                     <li><a href="#portfolio" class="navigation__item">Portfolio</a></li>
                     <li><a href="#about" class="navigation__item">About</a></li>
@@ -25,24 +47,42 @@
         <div class="header__bg-bottom"></div>
     </div>
 </header>
-<section class="slider">
+<section class="slider" id="slider">
     <div class="wrapper">
         <div class="slider__content">
             <a class="slider__button-prev"></a>
 
             <div class="sliders">
-                <div class="slider-1">
-                    <div class="vertical-phone phone">
+                <div class="slider slider-1">
+                    <div class="vertical-phone">
                         <img src="assets/img/shadow-vertical-phone.png" alt="vertical-phone-shadow" class="vertical-phone__shadow">
-                        <img src="assets/img/base-vertical-phone.png" alt="vertical-phone-base" class="vertical-phone__base">
+                        <img src="assets/img/base-vertical-phone.png" alt="vertical-phone-base" class="vertical-phone__base phone">
                         <img src="assets/img/screen-vertical-phone.png" alt="vertical-phone-screen" class="vertical-phone__screen screen">
                     </div>
-                    <div class="horizontal-phone phone">
+                    <div class="horizontal-phone">
                         <img src="assets/img/shadow-horizontal-phone.png" alt="horizontal-phone-shadow" class="horizontal-phone__shadow">
-                        <img src="assets/img/base-horizontal-phone.png" alt="horizontal-phone-base" class="horizontal-phone__base">
+                        <img src="assets/img/base-horizontal-phone.png" alt="horizontal-phone-base" class="horizontal-phone__base phone">
                         <img src="assets/img/screen-horizontal-phone.png" alt="horizontal-phone-screen" class="horizontal-phone__screen screen">
                     </div>
                 </div>
+
+                <div class="slider slider-2">
+                    <div class="phone-left">
+                        <img src="assets/img/phone-vertical-right-shadow.png" alt="vertical left phone" class="vertical-phone-left-shadow">
+                        <img src="assets/img/phone-vertical_right_base.png" alt="vertical left phone" class="vertical-phone-left-base phone">
+                        <img src="assets/img/phone-vertical-right-display.png" alt="vertical left phone" class="vertical-phone-left-display screen">
+                    </div>
+                    <div class="phone-center">
+                        <img src="assets/img/phone-vertical-center-shadow.png" alt="vertical center phone" class="vertical-phone-center-shadow">
+                        <img src="assets/img/phone-vertical-center-base.png" alt="vertical center phone" class="vertical-phone-center-base phone">
+                        <img src="assets/img/phone-vertical-center-display.png" alt="vertical center phone" class="vertical-phone-center-display screen">
+                    </div>
+                    <div class="phone-right">
+                        <img src="assets/img/phone-vertical-right-shadow.png" alt="vertical right phone" class="vertical-phone-right-shadow">
+                        <img src="assets/img/phone-vertical_right_base.png" alt="vertical right phone" class="vertical-phone-right-base phone">
+                        <img src="assets/img/phone-vertical-right-display.png" alt="vertical right phone" class="vertical-phone-right-display screen">
+                    </div>
+                    </div>
             </div>
             <a class="slider__button-next"></a>
         </div>
@@ -209,7 +249,7 @@
         <h2 class="contacts__title">Get a Quote</h2>
         <p class="contacts__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
         <div class="contacts__content">
-            <form class="contacts__form">
+            <form class="contacts__form" id="form">
                 <input type="text" placeholder="Name (required)" id="name" required>
                 <input type="email" placeholder="Email (required)" id="email" required>
                 <input type="text" placeholder="Subject" id="subject">
