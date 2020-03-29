@@ -562,16 +562,13 @@ section {
     width: 100%;
 }
 
-.picture img:hover {
-    outline: green solid 5px;
 
-}
 
 .picture-outline {
     margin : 0;
     padding: 0;
 
-    border: 5px solid #F06C64;
+    outline: 5px solid #F06C64;
 }
 
 .picture:nth-child(4n) {
@@ -882,6 +879,14 @@ section {
 @media screen and (min-width: 768px) and (max-width: 1019px) {
     .wrapper {
         width: 100%;
+    }
+
+    .header-for-mobile__overlay {
+        display: none;
+    }
+    
+    .header-for-mobile__content {
+        display: none;
     }
 
     .our-services__content {

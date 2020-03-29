@@ -50,7 +50,7 @@ const selectClickedMenuTab = (clickedMenuTab) => {
 function onScroll(event) {
     const currentPosition = window.scrollY;
     const sections = document.querySelectorAll('section');
-    const links = document.querySelectorAll('.header__navigation .navigation__item');
+    const links = document.querySelectorAll('.navigation__item');
 
 
     sections.forEach(element => {
@@ -163,8 +163,9 @@ const switchTabsHandler = () => {
     let portfolioTags = document.querySelector('.portfolio__tags');
 
     portfolioTags.addEventListener('click', (e) => {
-        removeSelectedTags(e);
-        if (e.target.classList.contains('tag')) {
+        
+        if (e.target.classList.contains('tag') && !e.target.classList.contains('tag--active')) {
+            removeSelectedTags(e);
             selectClickedTag(e.target);
         }
     })
@@ -363,6 +364,7 @@ const showMobileMuneHandler = () => {
     const burger = document.querySelector('.header-burger');
     const menu = document.querySelector('.header-for-mobile__content');
     const overlay = document.querySelector('.header-for-mobile__overlay');
+    
     let isOpen = false;
 
     burger.addEventListener('click', () => {
@@ -384,5 +386,18 @@ const showMobileMuneHandler = () => {
             overlay.style.display = 'none';
         }
 
-    })
+    });
+
+    menu.addEventListener('click', (e) => {
+        
+        if(e.target.classList.contains('navigation__item')) {
+            
+            isOpen = false;
+            burger.style.transform = 'rotate(0)';
+            menu.style.left = '-74%';
+            overlay.style.display = 'none';
+        }
+    });
+
 }
+
