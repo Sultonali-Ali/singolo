@@ -881,6 +881,10 @@ section {
         width: 100%;
     }
 
+    .header-for-mobile {
+        display: none;
+    }
+
     .header-for-mobile__overlay {
         display: none;
     }
